@@ -25,12 +25,14 @@ public class Exercise3 {
     }
 
     static boolean checkDuplicate(int[] numArr) {
-        HashSet<Integer> numSet = new HashSet<>();
-
-        for (int num: numArr) {
-            if (numSet.contains(num)) return true;
-            numSet.add(num);
+        for (int i = 0; i < numArr.length - 1; i++) {
+            for (int j = i + 1; j < numArr.length; j++) {
+                if (numArr[i] == numArr[j]) return true;
+            }
         }
+//        for (int i = 0; i < numArr.length - 1; i++) {
+//            if (numArr[i] == numArr[i + 1]) return true;
+//        }
         return false;
     }
 }
